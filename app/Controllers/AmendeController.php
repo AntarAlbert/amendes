@@ -73,6 +73,7 @@ class AmendeController extends BaseController
             $autorites = $userModel->where('id', $value['id_autorite_requerente'])->first();
             $value['id_autorite_requerente'] = $autorites['autorite'] ?? null;
             $userModel = model('ReglementationModel');
+            $d = 0;
             $reglement = $userModel->where('id', $value['id_reglementation'])->first();
             $value['id_reglementation'] = $reglement['loi'] ?? null;
             $value['montant_penalite'] = number_format(floatval($value['montant_penalite']), 2, ',', ' ');
